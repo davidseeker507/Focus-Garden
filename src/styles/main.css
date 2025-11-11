@@ -1,3 +1,16 @@
 header, main{
     padding-inline:clamp(1.5rem, 4vw, 3.5rem);
 }
+.top-bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding-block: 1.4rem;
+    background-color: rgba(245, 248, 247, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(32, 68, 55, 0.08);
+}
