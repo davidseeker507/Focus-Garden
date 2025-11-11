@@ -302,3 +302,79 @@ header, main{
     gap: 1.6rem;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
+.progress-card {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 18px;
+    border: 1px solid rgba(38, 125, 97, 0.12);
+    padding: 1.6rem;
+    box-shadow: 0 24px 40px -32px rgba(23, 97, 74, 0.45);
+    display: grid;
+    gap: 0.6rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.progress-card h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--primary-dark);
+}
+
+.progress-card p {
+    margin: 0;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.progress-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 30px 60px -34px rgba(23, 97, 74, 0.5);
+}
+
+.community {
+    background: rgba(255, 255, 255, 0.78);
+    border-radius: 24px;
+    border: 1px solid rgba(38, 125, 97, 0.1);
+    padding: clamp(2rem, 5vw, 3rem);
+    box-shadow: 0 28px 65px -42px rgba(23, 97, 74, 0.5);
+}
+
+.testimonials {
+    display: grid;
+    gap: 1.6rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.testimonial {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 18px;
+    border: 1px solid rgba(38, 125, 97, 0.12);
+    padding: 1.8rem;
+    box-shadow: 0 24px 45px -34px rgba(23, 97, 74, 0.45);
+    display: grid;
+    gap: 1rem;
+}
+
+.testimonial blockquote {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    position: relative;
+    padding-left: 1.6rem;
+}
+
+.testimonial blockquote::before {
+    content: "“";
+    position: absolute;
+    left: 0;
+    top: -0.5rem;
+    font-size: 2.8rem;
+    color: rgba(38, 125, 97, 0.35);
+    line-height: 1;
+}
+
+.testimonial figcaption {
+    font-weight: 600;
+    color: var(--primary-dark);
+    font-size: 0.95rem;
+}
