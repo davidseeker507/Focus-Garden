@@ -133,3 +133,31 @@ header, main{
     line-height: 1.7;
     color: var(--text-muted);
 }
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.grid--three {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.feature-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    border: 1px solid rgba(38, 125, 97, 0.12);
+    padding: 1.6rem;
+    box-shadow: 0 24px 40px -30px rgba(23, 97, 74, 0.45);
+    display: grid;
+    gap: 0.8rem;
+}
+
+.feature-card h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.feature-card p {
+    margin: 0;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
