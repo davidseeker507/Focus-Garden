@@ -109,3 +109,27 @@ header, main{
     color: var(--text-muted);
     line-height: 1.6;
 }
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding-block: 4rem;
+}
+.section__heading {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    max-width: 36rem;
+}
+
+.section__heading h2 {
+    font-size: clamp(1.9rem, 3.5vw, 2.4rem);
+    margin: 0;
+}
+
+.section__heading p {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+}
