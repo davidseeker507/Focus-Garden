@@ -31,3 +31,43 @@ header, main{
 .main-nav a:hover, .main-nav a:focus-visible {
     color: var(--primary-dark);
 }
+.ghost-button {
+    border: 1px solid rgba(38, 125, 97, 0.35);
+    border-radius: 999px;
+    padding: 0.75rem 1.4rem;
+    font-weight: 600;
+    color: var(--primary);
+    display: inline-flex;
+    align-items: center;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.ghost-button:hover,
+.ghost-button:focus-visible {
+    border-color: rgba(38, 125, 97, 0.6);
+    color: var(--primary-dark);
+}
+.hero {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+    padding-block: 4rem;
+}
+.hero__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.hero__content h1 {
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    line-height: 1.1;
+    margin: 0;
+}
+
+.hero__content h2 {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin: 0;
+}
