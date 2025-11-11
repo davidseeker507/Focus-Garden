@@ -89,3 +89,10 @@ header, main{
     transform: translateY(-1px);
     box-shadow: 0 24px 40px -18px rgba(23, 97, 74, 0.65);
 }
+.hero {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    align-items: center;
+    padding-block: 4rem;
+}
