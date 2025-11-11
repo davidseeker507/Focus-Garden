@@ -96,3 +96,22 @@ header, main{
     align-items: center;
     padding-block: 4rem;
 }
+.hero__visual {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(238, 248, 242, 0.9));
+    border-radius: 20px;
+    padding: 1.2rem;
+    box-shadow: 0 24px 50px -32px rgba(23, 97, 74, 0.5);
+    border: 1px solid rgba(32, 68, 55, 0.12);
+}
+.hero__visual img {
+    width: 100%;
+    border-radius: 14px;
+    display: block;
+    object-fit: cover;
+}
+.hero__visual figcaption {
+    margin-top: 0.8rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
