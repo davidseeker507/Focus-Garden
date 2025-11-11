@@ -185,3 +185,8 @@ header, main{
     padding: clamp(2rem, 5vw, 3rem);
     box-shadow: 0 32px 70px -40px rgba(23, 97, 74, 0.55);
 }
+.session-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.8rem;
+}
