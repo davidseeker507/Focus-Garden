@@ -21,3 +21,13 @@ header, main{
     align-items: center;
     gap: 0.4rem;
 }
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+.main-nav a:hover, .main-nav a:focus-visible {
+    color: var(--primary-dark);
+}
