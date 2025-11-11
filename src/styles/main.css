@@ -251,6 +251,15 @@ header, main{
     box-shadow: 0 30px 60px -35px rgba(23, 97, 74, 0.65);
 }
 
+.session-preview::before {
+    content: "";
+    position: absolute;
+    inset: -40% 20% 30% -30%;
+    background: radial-gradient(circle at top right, rgba(245, 181, 62, 0.5), transparent 55%);
+    opacity: 0.7;
+    pointer-events: none;
+}
+
 .session-preview h3 {
     margin: 0;
     font-size: 1.35rem;
@@ -271,6 +280,13 @@ header, main{
     color: rgba(255, 255, 255, 0.9);
 }
 
+.session-preview li {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.95rem;
+}
+
 .session-preview__badge {
     justify-self: start;
     background: rgba(255, 255, 255, 0.18);
@@ -280,4 +296,9 @@ header, main{
     font-weight: 600;
     letter-spacing: 0.05em;
     font-size: 0.9rem;
+}
+.progress-gallery {
+    display: grid;
+    gap: 1.6rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
