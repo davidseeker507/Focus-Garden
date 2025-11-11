@@ -190,3 +190,52 @@ header, main{
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.8rem;
 }
+.session-form {
+    display: grid;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(38, 125, 97, 0.18);
+    border-radius: 16px;
+    padding: 1.8rem;
+}
+.session-form label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text);
+}
+
+.session-form input,
+.session-form select {
+    padding: 0.75rem 0.85rem;
+    border-radius: 10px;
+    border: 1px solid rgba(38, 125, 97, 0.25);
+    font: inherit;
+    background: rgba(255, 255, 255, 0.95);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.session-form input:focus-visible,
+.session-form select:focus-visible {
+    outline: none;
+    border-color: rgba(38, 125, 97, 0.5);
+    box-shadow: 0 0 0 3px rgba(38, 125, 97, 0.15);
+}
+.session-form button {
+    justify-self: start;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: #fff;
+    padding: 0.9rem 1.9rem;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 18px 30px -18px rgba(23, 97, 74, 0.55);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.session-form button:hover,
+.session-form button:focus-visible {
+    transform: translateY(-1px);
+    box-shadow: 0 22px 36px -20px rgba(23, 97, 74, 0.6);
+}
