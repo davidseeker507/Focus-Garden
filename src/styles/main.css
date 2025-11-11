@@ -47,12 +47,6 @@ header, main{
     border-color: rgba(38, 125, 97, 0.6);
     color: var(--primary-dark);
 }
-.hero {
-    display: grid;
-    gap: 2rem;
-    align-items: center;
-    padding-block: 4rem;
-}
 .hero__content {
     display: flex;
     flex-direction: column;
