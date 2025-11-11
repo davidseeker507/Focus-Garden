@@ -1,3 +1,20 @@
+:root {
+    --text: #1b2a26;
+    --text-muted: #3f5c53;
+    --primary: #267d61;
+    --primary-dark: #1e5f4a;
+    --surface: #f5f9f7;
+}
+body {
+    margin: 0;
+    font-family: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--text);
+    background: var(--surface);
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
 header, main{
     padding-inline:clamp(1.5rem, 4vw, 3.5rem);
 }
@@ -160,4 +177,11 @@ header, main{
     margin: 0;
     color: var(--text-muted);
     line-height: 1.6;
+}
+.sessions {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 24px;
+    border: 1px solid rgba(38, 125, 97, 0.12);
+    padding: clamp(2rem, 5vw, 3rem);
+    box-shadow: 0 32px 70px -40px rgba(23, 97, 74, 0.55);
 }

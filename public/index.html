@@ -59,6 +59,45 @@
           </article>
         </div>
       </section>
+      <section id="sessions" class="section sessions">
+        <div class="section__heading">
+          <h2>Craft your perfect focus ritual.</h2>
+          <p>Start with a preset, or mix your own mindful schedule.</p>
+        </div>
+
+        <div class="session-layout">
+          <form class="session-form" aria-label="Create a custom focus session">
+            <label for="session-length">Focus length (minutes)</label>
+            <input id="session-length" name="session-length" type="number" min="5" max="180" value="25">
+
+            <label for="break-length">Rest interval (minutes)</label>
+            <input id="break-length" name="break-length" type="number" min="1" max="30" value="5">
+
+            <label for="focus-theme">Garden vibe</label>
+            <select id="focus-theme" name="focus-theme">
+              <option value="sunny">Sunny Citrus</option>
+              <option value="forest">Forest Whisper</option>
+              <option value="zen">Zen Meadow</option>
+              <option value="night">Moonlit Growth</option>
+            </select>
+
+            <button type="submit">Schedule session</button>
+          </form>
+
+          <div class="session-preview" role="status">
+            <h3>Next focus bloom</h3>
+            <p class="session-preview__summary">
+              25 min of deep work · 5 min mindful pause · Theme: Sunny Citrus
+            </p>
+            <ul>
+              <li>🌞 Morning focus ritual unlocks sun-burst blooms.</li>
+              <li>🧘 Mindful breaks add dew drops around your plant.</li>
+              <li>🌙 Evening reflections release shimmering fireflies.</li>
+            </ul>
+            <div class="session-preview__badge">Est. 3 new blooms</div>
+          </div>
+        </div>
+      </section>
      </main>
 </body>
 </html>
