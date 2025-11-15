@@ -67,3 +67,12 @@ resetBtn.addEventListener(("click"), () => {
     pauseBtn.disabled = true;
     resetBtn.disabled = true;
 });
+
+sessionLengthSelect.addEventListener("change", () => {
+    if (isRunning) return;
+
+    remainingSeconds = Number(sessionLengthSelect.value * 60);
+    renderTimer();
+    sessionStatus.textContent = "Time length updated."
+});
+
