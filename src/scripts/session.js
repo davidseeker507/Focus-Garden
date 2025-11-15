@@ -6,6 +6,7 @@ const sessionStatus = document.getElementById("session-status");
 const sessionLengthSelect = document.getElementById("session-length");
 const streakCount = document.getElementById("streak-count");
 const weeklyMinute = document.getElementById("weekly-minute");
+const gardenLog = document.getElementById("garden-log");
 let timerId = null;
 let remainingSeconds = Number(sessionLengthSelect.value) * 60;
 let isRunning = false;
@@ -55,7 +56,7 @@ pauseBtn.addEventListener("click", () => {
     pauseBtn.disabled = true;
 });
 
-resetBtn.addEventListener(("click"), () => {
+resetBtn.addEventListener("click", () => {
     clearInterval(timerId);
     isRunning = false;
 
@@ -71,8 +72,22 @@ resetBtn.addEventListener(("click"), () => {
 sessionLengthSelect.addEventListener("change", () => {
     if (isRunning) return;
 
-    remainingSeconds = Number(sessionLengthSelect.value * 60);
+    remainingSeconds = Number(sessionLengthSelect.value)  * 60;
     renderTimer();
-    sessionStatus.textContent = "Time length updated."
+    sessionStatus.textContent = "Time length updated.";
+
+    startBtn.disabled = false;
+    pauseBtn.disabled = true;
+    resetBtn.disabled = true;
 });
 
+const addGardenEntry = (minutes) => {
+    const emptyState = gardenLog.querySelector(".garden-log__empty");
+    if (emptyState) emptyState.remove();
+  
+    const entry = document.createElement("li");
+    entry.className = "garden-log__entry";
+    entry.textContent = `🌱 ${minutes} minute bloom`;
+  
+    gardenLog.prepend(entry);
+  };

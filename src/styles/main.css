@@ -482,3 +482,109 @@ header, main{
 .footer a:focus-visible {
     color: var(--primary-dark);
 }
+.session-page {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    padding: clamp(2rem, 6vw, 4rem);
+    max-width: 960px;
+    margin: 0 auto;
+}
+.session-controls {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    border: 1px solid rgba(38, 125, 97, 0.12);
+    padding: 2rem;
+    display: grid;
+    gap: 1.4rem;
+    box-shadow: 0 28px 60px -40px rgba(23, 97, 74, 0.5);
+}
+#timer-display {
+    font-size: clamp(2.4rem, 6vw, 3.6rem);
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.08em;
+    color: var(--primary-dark);
+    padding: 1rem;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(38, 125, 97, 0.15);
+}
+
+.session-controls button {
+    width: 100%;
+}
+.session-controls select {
+    padding: 0.75rem 0.85rem;
+    border-radius: 12px;
+    border: 1px solid rgba(38, 125, 97, 0.25);
+    font: inherit;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--text);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.session-controls select:focus-visible {
+    outline: none;
+    border-color: rgba(38, 125, 97, 0.5);
+    box-shadow: 0 0 0 3px rgba(38, 125, 97, 0.15);
+}
+.session-sidebar {
+    display: grid;
+    gap: 1.4rem;
+}
+
+.session-sidebar > div {
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 20px;
+    border: 1px solid rgba(38, 125, 97, 0.12);
+    padding: 1.6rem;
+    box-shadow: 0 24px 50px -40px rgba(23, 97, 74, 0.45);
+    display: grid;
+    gap: 0.6rem;
+}
+
+#focus-status {
+    display: grid;
+    gap: 0.4rem;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+#focus-status span {
+    display: inline-block;
+    padding: 0.5rem 0.75rem;
+    border-radius: 10px;
+    background: rgba(38, 125, 97, 0.08);
+    color: var(--primary-dark);
+}
+.session-log h2 {
+    margin: 0;
+    font-size: 1.15rem;
+    color: var(--primary-dark);
+}
+
+.garden-log {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.6rem;
+}
+
+.garden-log li {
+    background: rgba(38, 125, 97, 0.08);
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    color: var(--primary-dark);
+    font-size: 0.95rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.garden-log__empty {
+    background: rgba(38, 125, 97, 0.05);
+    color: var(--text-muted);
+    justify-content: center;
+}

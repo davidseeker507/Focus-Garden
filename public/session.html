@@ -17,24 +17,36 @@
         </nav>
         <a class="ghost-button" href="signup.html">Sign Up</a>
     </header>
-    <div id="timer-display">25:00</div>
-    <button id="start-btn">Start Focus</button>
-    <button id="pause-btn" disabled>Pause</button>
-    <button id="reset-btn" disabled>Reset</button>
-    <select id="session-length">
-        <option value="5">5 min</option>
-        <option value="10">10 min</option>
-        <option value="15">15 min</option>
-        <option value="30">30 min</option>
-        <option value="45">45 min</option>
-        <option value="60">60 min</option>
-    </select>
-
-    <div id="session-status">Not running</div>
-    <div id="focus-status">
-        <span id="streak-count">0 days</span>
-        <span id="weekly-minute">0 min</span>
-    </div>
+    <main class="session-page">
+        <section class="session-controls">
+            <div id="timer-display">25:00</div>
+            <button id="start-btn">Start Focus</button>
+            <button id="pause-btn" disabled>Pause</button>
+            <button id="reset-btn" disabled>Reset</button>
+            <select id="session-length">
+                    <option value="5">5 min</option>
+                    <option value="10">10 min</option>
+                    <option value="15">15 min</option>
+                    <option value="30">30 min</option>
+                    <option value="45">45 min</option>
+                    <option value="60">60 min</option>
+            </select>
+        </section>
+    
+        <aside class="session-sidebar">
+            <div id="session-status">Not running</div>
+            <div id="focus-status">
+                <span id="streak-count">0 days</span>
+                <span id="weekly-minute">0 min</span>
+            </div>
+            <div class="session-log">
+                <h2>Latest blooms</h2>
+                <ul id="garden-log" class="garden-log">
+                    <li class="garden-log__empty">You haven't logged any focus sessions yet.</li>
+                </ul>
+            </div>
+        </aside>
+    </main>
     <script src="../src/scripts/session.js" defer></script>
 </body>
 </html>
