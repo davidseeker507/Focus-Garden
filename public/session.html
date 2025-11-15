@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../src/styles/main.css">
+</head>
+<body>
+    <header class="top-bar">
+        <a href="#home" class="brand">🌱 Focus Garden</a>
+        <nav class="main-nav" aria-label="Primary navigation">
+            <a href="#features">Features</a>
+            <a href="#sessions">Sessions</a>
+            <a href="#progress">Progress</a>
+            <a href="#community">Community</a>
+        </nav>
+        <a class="ghost-button" href="signup.html">Sign Up</a>
+    </header>
+    <div id="timer-display">25:00</div>
+    <button id="start-btn">Start Focus</button>
+    <button id="pause-btn" disabled>Pause</button>
+    <button id="reset-btn" disabled>Reset</button>
+    <select id="session-length">
+        <option value="5">5 min</option>
+        <option value="10">10 min</option>
+        <option value="15">15 min</option>
+        <option value="30">30 min</option>
+        <option value="45">45 min</option>
+        <option value="60">60 min</option>
+    </select>
+
+    <div id="session-status">Not running</div>
+    <div id="focus-status">
+        <span id="streak-count">0 days</span>
+        <span id="weekly-minute">0 min</span>
+    </div>
+    <script src="../src/scripts/session.js" defer></script>
+</body>
+</html>
