@@ -851,3 +851,203 @@ header, main{
     color: var(--primary-dark);
     justify-content: center;
 }
+
+@media (max-width: 1040px) {
+    header,
+    main {
+        padding-inline: clamp(1.2rem, 6vw, 2rem);
+    }
+
+    .top-bar {
+        gap: 1.2rem;
+        padding-inline: clamp(1rem, 4vw, 2.2rem);
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .brand {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .brand__logo {
+        width: 56px;
+        height: 56px;
+    }
+
+    .main-nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    .main-nav a {
+        min-width: 120px;
+    }
+
+    .ghost-button {
+        width: 100%;
+        justify-content: center;
+        max-width: 240px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2.4rem;
+    }
+
+    .hero__content {
+        align-items: center;
+    }
+
+    .hero__visual {
+        max-width: 400px;
+        margin-inline: auto;
+    }
+
+    .section {
+        padding-block: clamp(3rem, 9vw, 3.6rem);
+    }
+
+    .session-page {
+        margin-inline: clamp(1rem, 6vw, 2rem);
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 0.95rem;
+    }
+
+    .top-bar {
+        border-radius: 0 0 18px 18px;
+        box-shadow: 0 10px 0 rgba(var(--primary-dark-rgb), 0.18),
+            0 0 0 4px rgba(var(--primary-rgb), 0.1);
+    }
+
+    .main-nav a,
+    .ghost-button {
+        font-size: 0.62rem;
+        padding-block: 0.5rem;
+    }
+
+    .hero__content h1 {
+        font-size: clamp(1.8rem, 8vw, 2.4rem);
+    }
+
+    .hero__content h2 {
+        font-size: 0.95rem;
+    }
+
+    .section__heading {
+        align-items: center;
+        text-align: center;
+    }
+
+    .session-page {
+        grid-template-columns: 1fr;
+        padding: clamp(1.6rem, 6vw, 2.4rem);
+    }
+
+    .session-controls {
+        box-shadow:
+            0 10px 0 rgba(var(--primary-dark-rgb), 0.18),
+            0 0 0 3px rgba(var(--primary-rgb), 0.18);
+    }
+
+    #timer-display {
+        font-size: clamp(1.5rem, 8vw, 2.1rem);
+        padding: 1rem;
+    }
+
+    .session-controls button,
+    .session-controls select {
+        font-size: 0.7rem;
+        letter-spacing: 0.06em;
+    }
+
+    .session-sidebar {
+        gap: 1.4rem;
+    }
+
+    .session-sidebar > div {
+        padding: clamp(1.1rem, 5vw, 1.5rem);
+    }
+
+    .growth-visual__scene {
+        max-width: 320px;
+        margin-inline: auto;
+    }
+
+    .growth-visual__label {
+        font-size: 0.65rem;
+    }
+
+    #focus-status span {
+        padding-inline: 0.6rem;
+    }
+}
+
+@media (max-width: 540px) {
+    header,
+    main {
+        padding-inline: 1rem;
+    }
+
+    .top-bar {
+        padding: 0.95rem 1rem;
+    }
+
+    .brand__logo {
+        width: 48px;
+        height: 48px;
+    }
+
+    .main-nav a {
+        flex: 1 1 calc(50% - 0.6rem);
+        min-width: auto;
+    }
+
+    .ghost-button {
+        max-width: none;
+    }
+
+    .hero__visual {
+        padding: 1rem;
+    }
+
+    .grid--three,
+    .progress-gallery,
+    .testimonials,
+    .cta__actions {
+        grid-template-columns: 1fr;
+        display: grid;
+    }
+
+    .section {
+        gap: 2rem;
+    }
+
+    .session-page {
+        margin-inline: 0;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+    }
+
+    .session-page::before {
+        display: none;
+    }
+
+    .session-controls,
+    .session-sidebar > div {
+        border-radius: 16px;
+    }
+
+    .garden-log li {
+        font-size: 0.68rem;
+    }
+}
