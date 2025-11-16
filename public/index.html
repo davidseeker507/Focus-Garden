@@ -8,7 +8,10 @@
 </head>
 <body>
     <header class="top-bar">
-        <a href="#home" class="brand">🌱 Focus Garden</a>
+        <a href="#home" class="brand">
+            <img class="brand__logo" src="img/plant-in-the-pot-with-pixel-art-style-vector.jpg" alt="Focus Garden logo showing a potted plant">
+            <span>Focus Garden</span>
+        </a>
         <nav class="main-nav" aria-label="Primary navigation">
             <a href="#features">Features</a>
             <a href="#sessions">Sessions</a>
@@ -19,7 +22,7 @@
     </header>
     <main id="home">
         <section class="hero">
-            <div class="hero__content">
+            <div class="hero__content" data-reveal="up">
                  <h1>Show your focus by growing a garden!
                  </h1>
                  <h2>Focus Garden is a minimalist web app that turns your focus time into something you can see and grow.
@@ -28,13 +31,14 @@
                 </h2>
                 <button>Start Session</button>
             </div>
-            <figure class="hero__visual">
+            <figure class="hero__visual" data-reveal="left" data-reveal-delay="140">
                 <img
-                  src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=80"
-                  alt="Sunlit garden with blooming flowers and greenery"
+                  src="img/hero-grid.png"
+                  alt="Pixel art garden scene with blooming plants"
+                  loading="lazy"
                 >
                 <figcaption>
-                  Your focus sessions nurture a calm, thriving garden you can return to.
+                  Your focus sessions nurture a vibrant pixel garden you can return to.
                 </figcaption>
               </figure>
        </section>

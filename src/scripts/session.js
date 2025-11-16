@@ -7,20 +7,42 @@ const sessionLengthSelect = document.getElementById("session-length");
 const streakCount = document.getElementById("streak-count");
 const weeklyMinute = document.getElementById("weekly-minute");
 const gardenLog = document.getElementById("garden-log");
+const growthScene = document.getElementById("growth-scene");
+const growthProgress = document.getElementById("growth-progress");
 let timerId = null;
 let remainingSeconds = Number(sessionLengthSelect.value) * 60;
+let totalSessionSeconds = remainingSeconds;
 let isRunning = false;
 
 const formatTime = (seconds) => {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
     return `${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
-}
+};
 
 const renderTimer = () => {
     timerDisplay.textContent = formatTime(remainingSeconds);
-}
+};
 renderTimer();
+
+const updateGrowthVisual = () => {
+    if (!growthScene || !growthProgress) return;
+    if (!totalSessionSeconds || totalSessionSeconds <= 0) {
+        growthScene.style.setProperty("--growth-percent", "0%");
+        growthProgress.textContent = "0%";
+        return;
+    }
+
+    const progressRatio = Math.min(
+        1,
+        Math.max(0, 1 - remainingSeconds / totalSessionSeconds),
+    );
+    const percent = Math.round(progressRatio * 100);
+
+    growthScene.style.setProperty("--growth-percent", `${percent}%`);
+    growthProgress.textContent = `${percent}%`;
+};
+updateGrowthVisual();
 
 startBtn.addEventListener("click", () => {
     if (isRunning) return;
@@ -31,19 +53,24 @@ startBtn.addEventListener("click", () => {
     pauseBtn.disabled = false;
     resetBtn.disabled = false;
 
+    totalSessionSeconds = remainingSeconds;
+    updateGrowthVisual();
+
     timerId = setInterval(() =>  {
         remainingSeconds -= 1;
         renderTimer();
+        updateGrowthVisual();
 
-    if (remainingSeconds <= 0) {
-        clearInterval(timerId);
-        isRunning = false;
-        sessionStatus.textContent = "Session complete!";
-        pauseBtn.disabled = true;
-        startBtn.disabled = false;
-
+        if (remainingSeconds <= 0) {
+            clearInterval(timerId);
+            isRunning = false;
+            sessionStatus.textContent = "Session complete!";
+            pauseBtn.disabled = true;
+            startBtn.disabled = false;
+            remainingSeconds = 0;
+            updateGrowthVisual();
         }
-    },1000);
+    }, 1000);
 });
 
 pauseBtn.addEventListener("click", () => {
@@ -54,6 +81,7 @@ pauseBtn.addEventListener("click", () => {
     sessionStatus.textContent = "Session paused";
     startBtn.disabled = false;
     pauseBtn.disabled = true;
+    updateGrowthVisual();
 });
 
 resetBtn.addEventListener("click", () => {
@@ -61,7 +89,9 @@ resetBtn.addEventListener("click", () => {
     isRunning = false;
 
     remainingSeconds = Number(sessionLengthSelect.value) * 60;
+    totalSessionSeconds = remainingSeconds;
     renderTimer();
+    updateGrowthVisual();
 
     sessionStatus.textContent = "Timer reset.";
     startBtn.disabled = false;
@@ -72,8 +102,10 @@ resetBtn.addEventListener("click", () => {
 sessionLengthSelect.addEventListener("change", () => {
     if (isRunning) return;
 
-    remainingSeconds = Number(sessionLengthSelect.value)  * 60;
+    remainingSeconds = Number(sessionLengthSelect.value) * 60;
+    totalSessionSeconds = remainingSeconds;
     renderTimer();
+    updateGrowthVisual();
     sessionStatus.textContent = "Time length updated.";
 
     startBtn.disabled = false;
@@ -91,3 +123,4 @@ const addGardenEntry = (minutes) => {
   
     gardenLog.prepend(entry);
   };
+  

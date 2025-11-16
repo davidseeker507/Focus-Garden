@@ -8,7 +8,10 @@
 </head>
 <body>
     <header class="top-bar">
-        <a href="#home" class="brand">🌱 Focus Garden</a>
+        <a href="index.html#home" class="brand">
+            <img class="brand__logo" src="img/plant-in-the-pot-with-pixel-art-style-vector.jpg" alt="Focus Garden logo showing a potted plant">
+            <span>Focus Garden</span>
+        </a>
         <nav class="main-nav" aria-label="Primary navigation">
             <a href="#features">Features</a>
             <a href="#sessions">Sessions</a>
@@ -35,6 +38,16 @@
     
         <aside class="session-sidebar">
             <div id="session-status">Not running</div>
+            <div class="growth-visual">
+                <h2>Current bloom</h2>
+                <div class="growth-visual__scene" id="growth-scene" aria-hidden="true">
+                    <img class="growth-visual__plant" src="img/growth-plant.png" alt="" role="presentation">
+                    <div class="growth-visual__soil"></div>
+                </div>
+                <p class="growth-visual__label">
+                    <strong id="growth-progress">0%</strong> of this session cultivated
+                </p>
+            </div>
             <div id="focus-status">
                 <span id="streak-count">0 days</span>
                 <span id="weekly-minute">0 min</span>
