@@ -9,10 +9,13 @@ const weeklyMinute = document.getElementById("weekly-minute");
 const gardenLog = document.getElementById("garden-log");
 const growthScene = document.getElementById("growth-scene");
 const growthProgress = document.getElementById("growth-progress");
+const plantPhoto = document.getElementById("growthPhoto");
 let timerId = null;
 let remainingSeconds = Number(sessionLengthSelect.value) * 60;
 let totalSessionSeconds = remainingSeconds;
 let isRunning = false;
+let plantValue = 0
+
 
 const formatTime = (seconds) => {
     const mins = Math.floor(seconds / 60);
@@ -57,7 +60,12 @@ startBtn.addEventListener("click", () => {
     updateGrowthVisual();
 
     timerId = setInterval(() =>  {
+        if (plantValue > 10)  {
+            plantPhoto.src = 'Pixel Art Flower Pack/Flower 1/Flower 1 - BLUE.png';            console.log("change photo")
+        }
         remainingSeconds -= 1;
+        plantValue += 1
+        console.log(plantValue)
         renderTimer();
         updateGrowthVisual();
 
@@ -69,6 +77,7 @@ startBtn.addEventListener("click", () => {
             startBtn.disabled = false;
             remainingSeconds = 0;
             updateGrowthVisual();
+            plantStageProgression();
         }
     }, 1000);
 });
@@ -123,4 +132,17 @@ const addGardenEntry = (minutes) => {
   
     gardenLog.prepend(entry);
   };
-  
+
+  const plantStageProgression = (plantValue) => {
+    if (!isRunning) return;
+
+    plantValue += 1
+  }
+
+function plantStageChange(plantValue) {
+    if (plantValue > 60)  {
+        plantPhoto.src = '/Users/david/Focus Garden/public/Pixel Art Flower Pack/Flower 1/Flower 1 - BLUE.png'
+        console.log
+    }
+    
+}
