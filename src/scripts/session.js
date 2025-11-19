@@ -141,10 +141,3 @@ const addGardenEntry = (minutes) => {
   
     gardenLog.prepend(entry);
   };
-
-  const plantStageProgression = (plantValue) => {
-    if (!isRunning) return;
-
-    plantValue += 1
-  }
-
