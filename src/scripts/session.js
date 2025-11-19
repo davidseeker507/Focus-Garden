@@ -61,9 +61,18 @@ startBtn.addEventListener("click", () => {
 
     timerId = setInterval(() =>  {
         if (plantValue > 10)  {
-            plantPhoto.src = 'Pixel Art Flower Pack/Flower 1/Flower 1 - BLUE.png';            console.log("change photo")
+            plantPhoto.src = 'Pixel Art Plants/Grape Plant/1.png';            console.log("change photo1")
         }
-        remainingSeconds -= 1;
+        if (plantValue > 20)  {
+            plantPhoto.src = 'Pixel Art Plants/Grape Plant/2.png';            console.log("change photo2")
+        }
+        if (plantValue > 30)  {
+            plantPhoto.src = 'Pixel Art Plants/Grape Plant/3.png';            console.log("change photo3")
+        }
+        if (plantValue > 40)  {
+            plantPhoto.src = 'Pixel Art Plants/Grape Plant/4.png';            console.log("change photo4")
+        }
+       remainingSeconds -= 1;
         plantValue += 1
         console.log(plantValue)
         renderTimer();
@@ -139,10 +148,3 @@ const addGardenEntry = (minutes) => {
     plantValue += 1
   }
 
-function plantStageChange(plantValue) {
-    if (plantValue > 60)  {
-        plantPhoto.src = '/Users/david/Focus Garden/public/Pixel Art Flower Pack/Flower 1/Flower 1 - BLUE.png'
-        console.log
-    }
-    
-}
