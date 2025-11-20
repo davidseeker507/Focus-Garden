@@ -14,8 +14,9 @@ let timerId = null;
 let remainingSeconds = Number(sessionLengthSelect.value) * 60;
 let totalSessionSeconds = remainingSeconds;
 let isRunning = false;
-let plantValue = 0
-
+let plantValue = 0;
+let selectedPlant = document.getElementById("plantSelect");
+let selectedPlantValue = null;
 
 const formatTime = (seconds) => {
     const mins = Math.floor(seconds / 60);
@@ -60,21 +61,10 @@ startBtn.addEventListener("click", () => {
     updateGrowthVisual();
 
     timerId = setInterval(() =>  {
-        if (plantValue > 10)  {
-            plantPhoto.src = 'Pixel Art Plants/Grape Plant/1.png';            console.log("change photo1")
-        }
-        if (plantValue > 20)  {
-            plantPhoto.src = 'Pixel Art Plants/Grape Plant/2.png';            console.log("change photo2")
-        }
-        if (plantValue > 30)  {
-            plantPhoto.src = 'Pixel Art Plants/Grape Plant/3.png';            console.log("change photo3")
-        }
-        if (plantValue > 40)  {
-            plantPhoto.src = 'Pixel Art Plants/Grape Plant/4.png';            console.log("change photo4")
-        }
        remainingSeconds -= 1;
-        plantValue += 1
-        console.log(plantValue)
+        plantValue += 1;
+        console.log(plantValue);
+        console.log(plantValueSelect);
         renderTimer();
         updateGrowthVisual();
 
@@ -140,4 +130,19 @@ const addGardenEntry = (minutes) => {
     entry.textContent = `🌱 ${minutes} minute bloom`;
   
     gardenLog.prepend(entry);
-  };
+};
+
+function imgChange(plantValue){
+    selectedPlantValue = selectedPlant.options[selected.selectedIndex].InnerHTML;
+    console.log(selectedPlantValue);
+}
+imgChange();
+function imgChange() {
+    const plantSelect = document.getElementById('plantSelect');
+    if (!plantSelect) return; // safety
+  
+    const selectedPlantValue =
+      plantSelect.options[plantSelect.selectedIndex].innerHTML;
+  
+    console.log(selectedPlantValue);
+  }

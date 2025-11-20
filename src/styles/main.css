@@ -1051,3 +1051,25 @@ header, main{
         font-size: 0.68rem;
     }
 }
+
+#plantSelect {
+    font-size: 0.68rem;;
+}
+
+#signUpForm {
+    background: linear-gradient(130deg, rgba(var(--primary-dark-rgb), 0.92), rgba(var(--primary-rgb), 0.78));
+    color: #f9f7ff;
+    border-radius: 26px;
+    padding: clamp(2rem, 6vw, 3.2rem);
+    max-width: 640px;
+    text-align: center;
+    display: grid;
+    gap: 1.2rem;
+    box-shadow: 0 36px 70px -42px rgba(var(--primary-dark-rgb), 0.6);
+}
+
+.usernameInput {
+    font-size: 1rem;
+    background-color:#aca0c2;
+
+}
