@@ -166,6 +166,7 @@ resetBtn.addEventListener("click", () => {
 });
 
 sessionLengthSelect.addEventListener("change", () => {
+    plantValue = 0;
     if (isRunning) return;
     plantPhoto.src="Pixel Art Flower Pack/Bush 1 (No Flowers)/Bush 1 (no flowers) - GREEN.png";
     remainingSeconds = Number(sessionLengthSelect.value) * 60;
