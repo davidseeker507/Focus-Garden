@@ -25,6 +25,7 @@ header, main{
     padding-inline:clamp(1.5rem, 4vw, 3.5rem);
 }
 .top-bar {
+    transition: transform 0.25s  ease;
     position: sticky;
     top: 0;
     z-index: 10;
@@ -42,6 +43,9 @@ header, main{
     color: var(--primary-dark);
     position: sticky;
 }
+.top-bar--hidden {
+    transform: translateY(-100%);
+  }
 
 .top-bar::before {
     content: "";
