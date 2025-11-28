@@ -81,22 +81,22 @@ startBtn.addEventListener("click", () => {
         updateGrowthVisual();
 
         if(!hasSwappedImage1 && plantValue >= changeRate) {
-            plantPhoto.src = "/public/img/Pixel%20Art%20Plants/Grape%20Plant/1.png";   
+            plantPhoto.src = "img/Pixel Art Plants/Grape Plant/1.png";   
             hasSwappedImage1 = true  
             console.log("Changephoto1");
            }
         else if(!hasSwappedImage2 && plantValue >= (changeRate * 2)){
-            plantPhoto.src = "/public/img/Pixel%20Art%20Plants/Grape%20Plant/2.png";   
+            plantPhoto.src = "img/Pixel Art Plants/Grape Plant/2.png";   
             hasSwappedImage2 = true  
             console.log("Changephoto2");
         }
         else if (!hasSwappedImage3 && plantValue  >= (changeRate * 3)){
-            plantPhoto.src = "/public/img/Pixel%20Art%20Plants/Grape%20Plant/3.png";   
+            plantPhoto.src = "img/Pixel Art Plants/Grape Plant/3.png";   
             hasSwappedImage3 = true  
             console.log("Changephoto3");
         }
         else if (!hasSwappedImage4 && plantValue >= (changeRate * 4)){
-            plantPhoto.src = "/public/img/Pixel%20Art%20Plants/Grape%20Plant/4.png";   
+            plantPhoto.src = "img/Pixel Art Plants/Grape Plant/4.png";   
             hasSwappedImage4 = true  
             console.log("Changephoto4");
         }
