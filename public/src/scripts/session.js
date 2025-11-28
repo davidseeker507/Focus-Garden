@@ -23,10 +23,12 @@ let hasSwappedImage1 = false;
 let hasSwappedImage2 = false;
 let hasSwappedImage3 = false;
 let hasSwappedImage4 = false;
+let plantFinished = false;
+
 console.log(changeRate)
 
 ChangeRateUpdate.addEventListener("change", (event) => {
-    let changeRate = Math.floor(Number((sessionLengthSelect.value) * 60) / 4);
+    changeRate = Math.floor(Number((sessionLengthSelect.value) * 60) / 4);
     console.log("Changed", changeRate);
 });
 
@@ -63,6 +65,10 @@ updateGrowthVisual();
 
 startBtn.addEventListener("click", () => {
     if (isRunning) return;
+    sessionLengthSelect.disabled = true;
+    if (plantFinished){
+        plantPhoto.src="Pixel Art Flower Pack/Bush 1 (No Flowers)/Bush 1 (no flowers) - GREEN.png";
+    }
 
     isRunning = true;
     sessionStatus.textContent = "Focus session in progress";
@@ -97,27 +103,38 @@ startBtn.addEventListener("click", () => {
         }
         else if (!hasSwappedImage4 && plantValue >= (changeRate * 4)){
             plantPhoto.src = "img/Pixel Art Plants/Grape Plant/4.png";   
-            hasSwappedImage4 = true  
+            hasSwappedImage4 = true 
+            plantValue = 0; 
             console.log("Changephoto4");
+            hasSwappedImage1 = false;
+            hasSwappedImage2 = false;
+            hasSwappedImage3 = false
+            hasSwappedImage4 = false;
         }
         
         
 
         if (remainingSeconds <= 0) {
+            sessionLengthSelect.disabled = false;
+            hasSwappedImage1 = false;
+            hasSwappedImage2 = false;
+            hasSwappedImage3 = false
+            hasSwappedImage4 = false;
             clearInterval(timerId);
             isRunning = false;
             sessionStatus.textContent = "Session complete!";
             pauseBtn.disabled = true;
-            startBtn.disabled = false;
+            startBtn.disabled = true;
+            plantFinished = true;
             remainingSeconds = 0;
             updateGrowthVisual();
-            plantStageProgression();
         }
     }, 1000);
 });
 
 pauseBtn.addEventListener("click", () => {
     if (!isRunning) return;
+    sessionLengthSelect.disabled = false;
 
     clearInterval(timerId);
     isRunning = false;
@@ -128,8 +145,15 @@ pauseBtn.addEventListener("click", () => {
 });
 
 resetBtn.addEventListener("click", () => {
+    sessionLengthSelect.disabled = true;
+    hasSwappedImage1 = false;
+    hasSwappedImage2 = false;
+    hasSwappedImage3 = false
+    hasSwappedImage4 = false;
     clearInterval(timerId);
     isRunning = false;
+    plantValue = 0; 
+    plantPhoto.src="Pixel Art Flower Pack/Bush 1 (No Flowers)/Bush 1 (no flowers) - GREEN.png";
 
     remainingSeconds = Number(sessionLengthSelect.value) * 60;
     totalSessionSeconds = remainingSeconds;
@@ -137,9 +161,9 @@ resetBtn.addEventListener("click", () => {
     updateGrowthVisual();
 
     sessionStatus.textContent = "Timer reset.";
-    startBtn.disabled = false;
+    startBtn.disabled = true;
     pauseBtn.disabled = true;
-    resetBtn.disabled = true;
+    resetBtn.disabled = false;
 });
 
 sessionLengthSelect.addEventListener("change", () => {
