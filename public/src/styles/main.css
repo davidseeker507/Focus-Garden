@@ -847,3 +847,11 @@ header, main{
     transform: translateY(-1px);
     box-shadow: 0 24px 40px -18px rgba(var(--primary-dark-rgb), 0.6);
   }
+  #session-length:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    filter: grayscale(40%);
+    border-color: rgba(var(--primary-dark-rgb), 0.15);
+    background: rgba(255, 255, 255, 0.4);
+    color: var(--text-muted);
+  }

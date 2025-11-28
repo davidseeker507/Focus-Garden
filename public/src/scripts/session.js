@@ -76,7 +76,6 @@ startBtn.addEventListener("click", () => {
     pauseBtn.disabled = false;
     resetBtn.disabled = false;
 
-    totalSessionSeconds = remainingSeconds;
     updateGrowthVisual();
 
     timerId = setInterval(() =>  {
@@ -145,7 +144,7 @@ pauseBtn.addEventListener("click", () => {
 });
 
 resetBtn.addEventListener("click", () => {
-    sessionLengthSelect.disabled = true;
+    sessionLengthSelect.disabled = false;
     hasSwappedImage1 = false;
     hasSwappedImage2 = false;
     hasSwappedImage3 = false
@@ -168,7 +167,7 @@ resetBtn.addEventListener("click", () => {
 
 sessionLengthSelect.addEventListener("change", () => {
     if (isRunning) return;
-
+    plantPhoto.src="Pixel Art Flower Pack/Bush 1 (No Flowers)/Bush 1 (no flowers) - GREEN.png";
     remainingSeconds = Number(sessionLengthSelect.value) * 60;
     totalSessionSeconds = remainingSeconds;
     renderTimer();
