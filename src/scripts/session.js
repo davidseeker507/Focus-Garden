@@ -17,6 +17,20 @@ let isRunning = false;
 let plantValue = 0;
 let selectedPlant = document.getElementById("plantSelect");
 let selectedPlantValue = null;
+let changeRate = Math.floor(Number((sessionLengthSelect.value) * 60) / 4) 
+let ChangeRateUpdate = document.getElementById("session-length");
+console.log(changeRate)
+
+ChangeRateUpdate.addEventListener("change", (event) => {
+    let changeRate = Math.floor(Number((sessionLengthSelect.value) * 60) / 4);
+    console.log("Changed", changeRate);
+});
+
+function plantChange(plantValue){
+    console.log("Hello world");
+}
+
+setInterval(test, 1000);
 
 const formatTime = (seconds) => {
     const mins = Math.floor(seconds / 60);
@@ -64,7 +78,6 @@ startBtn.addEventListener("click", () => {
        remainingSeconds -= 1;
         plantValue += 1;
         console.log(plantValue);
-        console.log(plantValueSelect);
         renderTimer();
         updateGrowthVisual();
 
