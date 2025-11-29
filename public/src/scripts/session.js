@@ -24,8 +24,33 @@ let hasSwappedImage2 = false;
 let hasSwappedImage3 = false;
 let hasSwappedImage4 = false;
 let plantFinished = false;
-
+let activePlantId = selectedPlant ? selectedPlant.value :  "grapePlant";
 console.log(changeRate)
+
+const plantStageImage = {
+    grapePlant:[
+        "Pixel Art Flower Pack/Bush 1 (No Flowers)/Bush 1 (no flowers) - GREEN.png",
+        "img/Pixel Art Plants/Grape Plant/1.png",
+        "img/Pixel Art Plants/Grape Plant/2.png",
+        "img/Pixel Art Plants/Grape Plant/3.png",
+        "img/Pixel Art Plants/Grape Plant/4.png",
+    ]
+}
+
+const showPlantStage = (stageIndex = 0) => {
+    const stages = plantStageImage[activePlantId] || [];
+    const nextImage = 
+        stages[stageIndex] ||
+        "Pixel Art Flower Pack/Bush 1 (No Flowers)/Bush 1 (no flowers) - GREEN.png";
+    plantPhoto.src = nextImage
+}
+showPlantStage(0);
+selectedPlant?.addEventListener("change", () => {
+    activePlantId = selectedPlant.value;
+    plantValue = 0;
+    hasSwappedImage1 = hasSwappedImage2 = hasSwappedImage3 = hasSwappedImage4 = false;
+    showPlantStage(0);
+} )
 
 ChangeRateUpdate.addEventListener("change", (event) => {
     changeRate = Math.floor(Number((sessionLengthSelect.value) * 60) / 4);
@@ -67,7 +92,7 @@ startBtn.addEventListener("click", () => {
     if (isRunning) return;
     sessionLengthSelect.disabled = true;
     if (plantFinished){
-        plantPhoto.src="Pixel Art Flower Pack/Bush 1 (No Flowers)/Bush 1 (no flowers) - GREEN.png";
+        showPlantStage(0);
     }
 
     isRunning = true;
@@ -86,22 +111,22 @@ startBtn.addEventListener("click", () => {
         updateGrowthVisual();
 
         if(!hasSwappedImage1 && plantValue >= changeRate) {
-            plantPhoto.src = "img/Pixel Art Plants/Grape Plant/1.png";   
+            showPlantStage(1)   
             hasSwappedImage1 = true  
             console.log("Changephoto1");
            }
         else if(!hasSwappedImage2 && plantValue >= (changeRate * 2)){
-            plantPhoto.src = "img/Pixel Art Plants/Grape Plant/2.png";   
+            showPlantStage(2)              
             hasSwappedImage2 = true  
             console.log("Changephoto2");
         }
         else if (!hasSwappedImage3 && plantValue  >= (changeRate * 3)){
-            plantPhoto.src = "img/Pixel Art Plants/Grape Plant/3.png";   
+            showPlantStage(3)               
             hasSwappedImage3 = true  
             console.log("Changephoto3");
         }
         else if (!hasSwappedImage4 && plantValue >= (changeRate * 4)){
-            plantPhoto.src = "img/Pixel Art Plants/Grape Plant/4.png";   
+            showPlantStage(4)   
             hasSwappedImage4 = true 
             plantValue = 0; 
             console.log("Changephoto4");
@@ -152,7 +177,7 @@ resetBtn.addEventListener("click", () => {
     clearInterval(timerId);
     isRunning = false;
     plantValue = 0; 
-    plantPhoto.src="Pixel Art Flower Pack/Bush 1 (No Flowers)/Bush 1 (no flowers) - GREEN.png";
+    showPlantStage(0);
 
     remainingSeconds = Number(sessionLengthSelect.value) * 60;
     totalSessionSeconds = remainingSeconds;
@@ -167,8 +192,12 @@ resetBtn.addEventListener("click", () => {
 
 sessionLengthSelect.addEventListener("change", () => {
     plantValue = 0;
+    hasSwappedImage1 = false;
+    hasSwappedImage2 = false;
+    hasSwappedImage3 = false;
+    hasSwappedImage4 = false;
+    showPlantStage(0);
     if (isRunning) return;
-    plantPhoto.src="Pixel Art Flower Pack/Bush 1 (No Flowers)/Bush 1 (no flowers) - GREEN.png";
     remainingSeconds = Number(sessionLengthSelect.value) * 60;
     totalSessionSeconds = remainingSeconds;
     renderTimer();
@@ -190,18 +219,3 @@ const addGardenEntry = (minutes) => {
   
     gardenLog.prepend(entry);
 };
-
-function imgChange(plantValue){
-    selectedPlantValue = selectedPlant.options[selected.selectedIndex].InnerHTML;
-    console.log(selectedPlantValue);
-}
-imgChange();
-function imgChange() {
-    const plantSelect = document.getElementById('plantSelect');
-    if (!plantSelect) return; // safety
-  
-    const selectedPlantValue =
-      plantSelect.options[plantSelect.selectedIndex].innerHTML;
-  
-    console.log(selectedPlantValue);
-  }
